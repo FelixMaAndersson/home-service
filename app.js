@@ -4,7 +4,7 @@ import PersonRow from './components/PersonRow.js' // imports the PersonRow compo
 import ScheduleHeader from './components/ScheduleHeader.js' // imports the PersonRow component
 import ScheduleOverlay from './components/ScheduleOverlay.js'
 import ScheduleToolbar from './components/ScheduleToolbar.js'
-
+import TheNavBar from './components/TheNavBar.js';
 
 // The "root component". Defines its setup, uses child components, and renders the main template.
 const app = {
@@ -15,7 +15,8 @@ const app = {
         PersonRow,
         ScheduleHeader,
         ScheduleOverlay,
-        ScheduleToolbar
+        ScheduleToolbar,
+        TheNavBar
     },
 
     // in setup() we define the data and functions that this component uses.
@@ -32,7 +33,7 @@ const app = {
             .then(resp => resp.json())
             .then(data => persons.value = data)
 
-         // here we create all the dates.
+        // here we create all the dates.
         function generateDays() {
             const days = [] // an empty array of days.
             const start = new Date(viewStart) //viewStart is turned in to a real date object.
@@ -66,6 +67,8 @@ const app = {
     // our index.html html, where every component is added by writing <component-name></component-name>
     template: `
     <div class="schedule-wrapper">
+        <the-nav-bar></the-nav-bar>
+        
         <div class="schedule" :style="scheduleStyle()">
             
             <schedule-header :days="days"></schedule-header>
