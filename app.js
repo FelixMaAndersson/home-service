@@ -1,7 +1,7 @@
-import { createApp, ref, computed, onMounted, onUnmounted, useTemplateRef } from 'vue' // this is exactly like in jasa
-import BookingItem from './components/BookingItem.js' // imports the BookingItem component
-import PersonRow from './components/PersonRow.js' // imports the PersonRow component
-import ScheduleHeader from './components/ScheduleHeader.js' // imports the PersonRow component
+// this is exactly like in java
+import { createApp, ref, computed, onMounted, onUnmounted, useTemplateRef } from 'vue'
+import PersonRow from './components/PersonRow.js'
+import ScheduleHeader from './components/ScheduleHeader.js'
 import ScheduleOverlay from './components/ScheduleOverlay.js'
 import ScheduleToolbar from './components/ScheduleToolbar.js'
 
