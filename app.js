@@ -11,11 +11,9 @@ const app = {
 
     // the components that we use
     components: {
-
         PersonRow,
         ScheduleHeader,
         ScheduleOverlay,
-        ScheduleToolbar,
         TheNavBar
     },
 
@@ -71,7 +69,10 @@ const app = {
         
         <div class="schedule" :style="scheduleStyle()">
             
-            <schedule-header :days="days"></schedule-header>
+            <schedule-header 
+            :days="days"
+            :view-start="viewStart"
+            ></schedule-header>
 
                 <person-row
                     v-for="(p, index) in persons"
