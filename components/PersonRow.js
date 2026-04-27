@@ -65,14 +65,17 @@ export default {
             class="name"
             :style="nameStyle(topRow)"
         >
-            {{ person.name }}
-
+            <div class="job-icons">
             <img
                 v-for="profession in person.professions"
                 :src="jobImage(profession)"
                 class="job-icon"
                 :alt="profession"
             >
+            </div>
+            <div class="person-name">
+                {{ person.name }}
+            </div>
         </div>
 
         <booking-item

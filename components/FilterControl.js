@@ -1,11 +1,27 @@
 export default {
+    emits: ['toggle-profession'],
+
+    setup(props, { emit }) {
+        const professions = ['Carpenter', 'Electrician', 'Mason', 'Painter', 'Plumber']
+
+        function toggleProfession(profession) {
+            emit('toggle-profession', profession)
+        }
+
+        return {
+            professions,
+            toggleProfession
+        }
+    },
+
     template: `
         <div class="filter-controls">
-                    <img src="assets/Carpenter.png">
-                    <img src="assets/Electrician.png">
-                    <img src="assets/Mason.png">
-                    <img src="assets/Painter.png">
-                    <img src="assets/Plumber.png">
+            <img
+                v-for="profession in professions"
+                :key="profession"
+                :src="'assets/' + profession + '.png'"
+                @click="toggleProfession(profession)"
+            >
         </div>
     `
 }

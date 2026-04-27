@@ -7,9 +7,14 @@ export default {
         ZoomControl
     },
 
+    emits: ['toggle-profession'],
+
     template: `
         <div class="schedule-overlay">
-            <filter-control></filter-control>
+            <filter-control
+                @toggle-profession="$emit('toggle-profession', $event)"
+            ></filter-control>
+
             <zoom-control></zoom-control>
         </div>
     `

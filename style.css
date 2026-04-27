@@ -60,13 +60,24 @@ body,
     z-index: 2;
     display: flex;
     align-items: center;
-    background-color: rgba(239, 242, 249, 1);
+    justify-content: space-between;
+    background-color: #EFF2F9;
     color: black;
     padding: 0 10px;
     border-bottom: 1px solid #d0d6e5;
     box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, 0.25);
 }
 
+.job-icons {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.person-name {
+    text-align: right;
+
+}
 
 .date-header {
     grid-column: 1;
