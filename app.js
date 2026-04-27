@@ -64,8 +64,9 @@ const app = {
 
     // our index.html html, where every component is added by writing <component-name></component-name>
     template: `
+     <the-nav-bar></the-nav-bar>
     <div class="schedule-wrapper">
-        <the-nav-bar></the-nav-bar>
+       
         
         <div class="schedule" :style="scheduleStyle()">
             
