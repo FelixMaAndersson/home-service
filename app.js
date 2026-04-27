@@ -1,4 +1,4 @@
-import { createApp, ref, computed, onMounted, onUnmounted, useTemplateRef } from 'vue'; // this is exactly like in jasa
+import { createApp, ref, computed } from 'vue'; // this is exactly like in jasa
 import PersonRow from './components/PersonRow.js';
 import ScheduleHeader from './components/ScheduleHeader.js';
 import ScheduleOverlay from './components/ScheduleOverlay.js';

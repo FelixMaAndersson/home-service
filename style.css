@@ -21,7 +21,7 @@ body,
 .schedule {
     display: grid;
     grid-template-rows: 3rem 2.5rem;
-    grid-auto-rows: 1.6rem;
+    grid-auto-rows: 1.3rem;
     column-gap: 5px;
     row-gap: 0;
     width: max-content;
