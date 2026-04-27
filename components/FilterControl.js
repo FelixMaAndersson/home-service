@@ -1,6 +1,7 @@
 export default {
     emits: ['toggle-profession'],
 
+    // the component that enables the posibility to toggle professions
     setup(props, { emit }) {
         const professions = ['Carpenter', 'Electrician', 'Mason', 'Painter', 'Plumber']
 

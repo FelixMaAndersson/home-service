@@ -43,12 +43,11 @@ export default {
 
     // as you see here BookingItem is a child of PersonRow
     template: `
-
-    <div
-    class="person-row-bg"
-    :class="{ even: topRow % 4 === 3 }"
-    :style="rowBackgroundStyle(topRow)"
-></div>
+        <div
+            class="person-row-bg"
+            :class="{ even: topRow % 4 === 3 }"
+            :style="rowBackgroundStyle(topRow)"
+        ></div>
 
         <template v-for="(d, i) in days" :key="'person-divider-' + i">
             <div

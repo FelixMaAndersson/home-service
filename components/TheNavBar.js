@@ -1,3 +1,5 @@
+// a simple component to create a dummy navbar
+
 export default {
     name: 'TheNavbar',
     data() {

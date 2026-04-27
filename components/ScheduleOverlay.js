@@ -1,6 +1,7 @@
 import FilterControl from './FilterControl.js'
 import ZoomControl from './ZoomControl.js'
 
+// a simple component where the two baby hover components are brought together
 export default {
     components: {
         FilterControl,

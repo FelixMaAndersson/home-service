@@ -8,6 +8,7 @@ export default {
 
     setup(props) {
 
+        // to show the letter of each day in the header
         function dayLetter(date) {
             const day = date.getDay()
             if (day === 0 || day === 6) return ''
@@ -90,7 +91,6 @@ export default {
     <div class="header-bg"></div>
     <!-- LEFT HEADER -->
 <div class="date-header">
-    <div class="month-label-top">
         <div class="month-label-top">◀ {{ viewMonth }} ▶</div>
     </div>
 

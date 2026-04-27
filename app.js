@@ -1,4 +1,4 @@
-import { createApp, ref, computed } from 'vue'; // this is exactly like in jasa
+import { createApp, ref, computed } from 'vue'; // this is exactly like in java
 import PersonRow from './components/PersonRow.js';
 import ScheduleHeader from './components/ScheduleHeader.js';
 import ScheduleOverlay from './components/ScheduleOverlay.js';
@@ -64,6 +64,7 @@ const app = {
     `
         }
 
+        // to toggle the professions
         function toggleProfession(profession) {
             if (selectedProfessions.value.includes(profession)) {
                 selectedProfessions.value = selectedProfessions.value.filter(p => p !== profession)
@@ -96,9 +97,9 @@ const app = {
         }
     },
 
-    // our index.html html, where every component is added by writing <component-name></component-name>
+    // our "index.html", where every component is added by writing <component-name></component-name>
     template: `
-     <the-nav-bar></the-nav-bar>
+    <the-nav-bar></the-nav-bar>
     <div class="schedule-wrapper">
        
         
