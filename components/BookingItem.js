@@ -34,25 +34,12 @@ export default {
             return `${b.percentage}% ${b.status}`
         }
 
-        // decides color and vertical placement for each booking.
         const bookingStyle = computed(() => {
             const b = props.booking
 
-            let bg
             let rowStart = props.topRow
             let rowEnd = props.topRow + 2
 
-            if (b.status === "Booked") {
-                bg = "#C24756"
-            } else if (b.status === "Preliminary") {
-                bg = "linear-gradient(90deg, #EF6172 38.57%, #EDB3BA 87.3%)"
-            } else if (b.status === "Absent") {
-                bg = "#909090"
-            }
-
-            // each person uses two row sections: an upper half and a lower half.
-            // 50% Booked uses the upper half.
-            // 50% Preliminary uses the lower half.
             if (b.percentage === 50 && b.status === "Booked") {
                 rowEnd = props.topRow + 1
             } else if (b.percentage === 50 && b.status === "Preliminary") {
@@ -60,26 +47,44 @@ export default {
                 rowEnd = props.topRow + 2
             }
 
-            const startDay = dayIndex(b.from, props.viewStart) // how many days from viewStart the booking begins.
-            const endDay = dayIndex(b.to, props.viewStart)  // how many days from viewStart the booking ends.
+            const startDay = dayIndex(b.from, props.viewStart)
+            const endDay = dayIndex(b.to, props.viewStart)
 
-            // returns the dynamic CSS for all the bookings.
             return `
-                background:${bg};
-                grid-column: ${startDay + 2} / ${endDay + 3};
-                grid-row: ${rowStart} / ${rowEnd};
-            `
+        grid-column: ${startDay + 2} / ${endDay + 3};
+        grid-row: ${rowStart} / ${rowEnd};
+    `
         })
 
-        return {
-            bookingLabel,
-            bookingStyle
-        }
-    },
+        const bookingInnerStyle = computed(() => {
+            const b = props.booking
 
-    template: `
-        <div class="booking" :style="bookingStyle">
+            if (b.status === "Booked") {
+                return `background: #C24756;`
+            }
+
+            if (b.status === "Preliminary") {
+                return `background: linear-gradient(90deg, #EF6172 38.57%, #EDB3BA 87.3%);`
+            }
+
+            if (b.status === "Absent") {
+                return `background: #909090;`
+            }
+        })
+       
+
+    return {
+        bookingLabel,
+        bookingStyle,
+        bookingInnerStyle
+    }
+},
+
+template: `
+    <div class="booking-wrapper" :style="bookingStyle">
+        <div class="booking" :style="bookingInnerStyle">
             {{ bookingLabel() }}
         </div>
+    </div>    
     `
 }

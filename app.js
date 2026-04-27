@@ -1,9 +1,7 @@
 import { createApp, ref, computed, onMounted, onUnmounted, useTemplateRef } from 'vue' // this is exactly like in jasa
-import BookingItem from './components/BookingItem.js' // imports the BookingItem component
 import PersonRow from './components/PersonRow.js' // imports the PersonRow component
 import ScheduleHeader from './components/ScheduleHeader.js' // imports the PersonRow component
 import ScheduleOverlay from './components/ScheduleOverlay.js'
-import ScheduleToolbar from './components/ScheduleToolbar.js'
 import TheNavBar from './components/TheNavBar.js';
 
 // The "root component". Defines its setup, uses child components, and renders the main template.

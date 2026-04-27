@@ -11,10 +11,10 @@ html {
 .schedule {
     display: grid;
     grid-template-rows: 3rem 2rem;
-    grid-auto-rows: 1.3rem;
-    gap: 5px;
+    grid-auto-rows: 1.6rem;
+    column-gap: 5px;
+    row-gap: 0;
     width: max-content;
-    line-height: normal;
     margin-top: 40px;
     background-color: #EFF2F9;
 }
@@ -44,11 +44,14 @@ html {
 .name {
     position: sticky;
     left: 0;
-    z-index: 1;
+    z-index: 2;
     display: flex;
     align-items: center;
-    background: white;
+    background-color: rgba(239, 242, 249, 1);
     color: black;
+    padding: 0 10px;
+    border-bottom: 1px solid #d0d6e5;
+    box-shadow: 4px 4px 10px 0 rgba(0, 0, 0, 0.25);
 }
 
 .date-header {
@@ -58,7 +61,7 @@ html {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     padding-left: 10px;
     background: #EFF2F9;
     z-index: 3;
@@ -82,14 +85,21 @@ html {
     color: #666;
 }
 
+.booking-wrapper {
+    padding: 3px 0;
+    box-sizing: border-box;
+}
+
 .booking {
-    padding: 5px;
+    height: 100%;
+    padding: 0 8px;
     border-radius: 10px;
     display: flex;
     align-items: center;
     font-size: 12px;
     color: #FFF;
     font-weight: 400;
+    box-sizing: border-box;
 }
 
 .job-icon {
@@ -195,7 +205,7 @@ html {
     background: #f3f3f3;
 }
 
-.name,
+
 .booking {
     position: relative;
     z-index: 1;

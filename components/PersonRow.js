@@ -28,7 +28,7 @@ export default {
 
         function rowBackgroundStyle(topRow) {
     return `
-        grid-column: 1 / -1;
+        grid-column: 2 / -1;
         grid-row: ${topRow} / ${topRow + 2};
     `
 }
