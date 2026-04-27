@@ -16,8 +16,6 @@ export default {
         }
 
         // A function that groups "days" into weeks.
-        // Each week should know which day index it starts and ends at,
-        // so it can span across multiple grid columns.
 
         function getWeekNumber(date) {
             const d = new Date(date)
@@ -60,9 +58,7 @@ export default {
 
         onUnmounted(() => clearInterval(interval))
 
-        // TODO: Add a label for the current month in view.
-        // For now, this can be based on viewStart (simple version),
-        // but later it could depend on scroll position.
+        // A label for the current month in view.
 
         const viewMonth = computed(() => {
             return props.days[0]?.toLocaleString('sv-SE', { month: 'long' })
