@@ -91,6 +91,7 @@ export default {
     <div class="header-bg"></div>
     <!-- LEFT HEADER -->
 <div class="date-header">
+    <div class="month-label-top">
         <div class="month-label-top">◀ {{ viewMonth }} ▶</div>
     </div>
 
