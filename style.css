@@ -306,7 +306,7 @@ body,
 
     border-left: 7px solid transparent;
     border-right: 7px solid transparent;
-    border-top: 10px solid #4f8cff;
+    border-top: 10px solid #427FF3;
 
     position: sticky;
     top: 5rem;
@@ -317,7 +317,7 @@ body,
 .today-line {
     justify-self: center;
     width: 2px;
-    background: #4f8cff;
+    background: #427FF3;
 
     position: relative;
     z-index: 2;
