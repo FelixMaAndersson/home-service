@@ -181,8 +181,31 @@ html {
     bottom: 20px;
     right: 20px;
     pointer-events: auto;
-    background-color: blueviolet;
+
+
+    line-height: 31.843px;
+
+    text-align: center;
+    padding: 0.5rem;
+
+    border-radius: 18.948px;
+    border: 2px solid #CFD3DD;
+    background: #EFF2F9;
+    box-shadow: 0 -2px 10px 1px rgba(0, 0, 0, 0.25);
 }
+
+.zoom-icon {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+.zoom-divider {
+    height: 0.7px;
+    background: #CFD3DD;
+}
+
 
 .main-navbar {
     position: fixed;
