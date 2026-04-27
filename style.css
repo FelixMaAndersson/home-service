@@ -21,7 +21,7 @@ body,
 .schedule {
     display: grid;
     grid-template-rows: 3rem 2.5rem;
-    grid-auto-rows: 1.3rem;
+    grid-auto-rows: 1.2rem;
     column-gap: 5px;
     row-gap: 0;
     width: max-content;
@@ -38,8 +38,6 @@ body,
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-
-
 
     position: sticky;
     top: 3rem;
@@ -78,7 +76,6 @@ body,
     text-align: right;
     color: #51566d;
     font-size: 12px;
-
 }
 
 .date-header {
@@ -145,7 +142,6 @@ body,
 .job-icon {
     width: 16px;
     height: 16px;
-    margin-left: 4px;
 }
 
 .week-cell {
@@ -264,11 +260,10 @@ body,
 .nav-menu li.active {
     color: #000;
     font-size: 13px;
-
 }
 
 .nav-left {
-        display: flex;
+    display: flex;
     align-items: center;
     gap: 105px;
 }
@@ -298,12 +293,7 @@ body,
     z-index: 1;
     pointer-events: none;
 }
-.logo-placeholder {
-    margin: 0;
-    padding: 0;
-}
 
-.logo-placeholder img,
 .icon {
     display: block;
 }
