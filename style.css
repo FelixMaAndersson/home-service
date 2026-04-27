@@ -12,7 +12,7 @@ html {
     display: grid;
     grid-auto-rows: 2rem;
     gap: 5px;
-    min-width: max-content;
+    width: max-content;
     line-height: normal;
     margin-top: 40px;
     background-color: #EFF2F9;

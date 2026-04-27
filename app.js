@@ -19,12 +19,23 @@ const app = {
 
     // in setup() we define the data and functions that this component uses.
     setup() {
-        const persons = ref([]) // creates an empty array that we fill with data from the API.
-        const viewStart = "2026-04-09" // this is our first date in the schedule.
-        const visibleDays = 28 // how many days that are visible in a view.
-        const totalDays = 55 // how many days exist in the full schedule.
-        const nameColumnWidth = 180 // the widht of the name column.
-        const days = generateDays() // creates a list of days for the first row where we see the dates.
+        const persons = ref([])
+
+        const today = new Date()
+
+        const viewStartDate = new Date(today)
+        viewStartDate.setDate(today.getDate() - 14)
+
+        // moves to monday
+        const day = viewStartDate.getDay() || 7
+        viewStartDate.setDate(viewStartDate.getDate() - (day - 1))
+
+        const viewStart = viewStartDate.toISOString().split('T')[0]
+
+        const visibleDays = 27 // to not show sundays
+        const totalDays = 55
+        const nameColumnWidth = 180
+        const days = generateDays()
 
         // we fetch the data from the API, turn the response into JavaScript data, and store it in persons.
         fetch('https://yrgo-web-services.netlify.app/bookings')
@@ -48,9 +59,12 @@ const app = {
 
         // creates the grid columns: one fixed name column and day columns sized so that 28 days are visible.
         function scheduleStyle() {
+            const gap = 5
+            const totalGapWidth = (visibleDays - 1) * gap
+
             return `
-                grid-template-columns: ${nameColumnWidth}px repeat(${totalDays}, calc((100vw - ${nameColumnWidth}px) / ${visibleDays}));
-            `
+        grid-template-columns: ${nameColumnWidth}px repeat(${totalDays}, calc((100vw - ${nameColumnWidth}px - ${totalGapWidth}px) / ${visibleDays}));
+    `
         }
 
         // return the values that the template should have access to.
