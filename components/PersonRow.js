@@ -26,14 +26,29 @@ export default {
             `
         }
 
+        function rowBackgroundStyle(topRow) {
+    return `
+        grid-column: 1 / -1;
+        grid-row: ${topRow} / ${topRow + 2};
+    `
+}
+
         return {
             jobImage,
-            nameStyle
+            nameStyle,
+            rowBackgroundStyle
         }
     },
 
     // as you see here BookingItem is a child of PersonRow
     template: `
+
+    <div
+    class="person-row-bg"
+    :class="{ even: topRow % 4 === 3 }"
+    :style="rowBackgroundStyle(topRow)"
+></div>
+        
         <div
             class="name"
             :style="nameStyle(topRow)"

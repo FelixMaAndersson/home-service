@@ -10,7 +10,8 @@ html {
 
 .schedule {
     display: grid;
-    grid-auto-rows: 2rem;
+    grid-template-rows: 3rem 2rem;
+    grid-auto-rows: 1.3rem;
     gap: 5px;
     width: max-content;
     line-height: normal;
@@ -183,4 +184,19 @@ html {
     font-size: 12px;
     color: #666;
     font-weight: bold;
+}
+
+.person-row-bg {
+    background: white;
+    z-index: 0;
+}
+
+.person-row-bg.even {
+    background: #f3f3f3;
+}
+
+.name,
+.booking {
+    position: relative;
+    z-index: 1;
 }
