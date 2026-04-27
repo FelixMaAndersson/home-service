@@ -137,5 +137,26 @@ export default {
             </div>
         </div>
     </template>
+
+    <!-- MARKER -->
+    <template v-for="(d, i) in days" :key="'today-marker-' + i">
+        <div
+            v-if="isToday(d)"
+            class="today-arrow"
+            :style="{
+                gridColumn: i + 2,
+                gridRow: 2
+            }"
+        ></div>
+
+        <div
+            v-if="isToday(d)"
+            class="today-line"
+            :style="{
+                gridColumn: i + 2,
+                gridRow: '3 / 59'
+            }"
+        ></div>
+    </template>
 `
 }

@@ -174,7 +174,7 @@ body,
     position: absolute;
     inset: 0;
     pointer-events: none;
-    z-index: 10;
+    z-index: 100;
 }
 
 .filter-controls {
@@ -306,4 +306,30 @@ body,
 .logo-placeholder img,
 .icon {
     display: block;
+}
+
+.today-arrow {
+    justify-self: center;
+    align-self: end;
+    width: 0;
+    height: 0;
+
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 10px solid #4f8cff;
+
+    position: sticky;
+    top: 5rem;
+    z-index: 45;
+    pointer-events: none;
+}
+
+.today-line {
+    justify-self: center;
+    width: 2px;
+    background: #4f8cff;
+
+    position: relative;
+    z-index: 18;
+    pointer-events: none;
 }
