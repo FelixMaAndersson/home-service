@@ -15,7 +15,7 @@ export default {
             return letters[day]
         }
 
-        // TODO: Create a function that groups "days" into weeks.
+        // A function that groups "days" into weeks.
         // Each week should know which day index it starts and ends at,
         // so it can span across multiple grid columns.
 
@@ -26,29 +26,29 @@ export default {
             const yearStart = new Date(d.getFullYear(), 0, 1)
             return Math.ceil((((d - yearStart) / 86400000) + 1) / 7)
         }
-const weeks = computed(() => {
-    const result = []
-    let current = null
+        const weeks = computed(() => {
+            const result = []
+            let current = null
 
-    props.days.forEach((d, i) => {
-        const isSunday = d.getDay() === 0
+            props.days.forEach((d, i) => {
+                const isSunday = d.getDay() === 0
 
-        if (!current || isSunday) {
-            current = {
-                week: getWeekNumber(d),
-                start: i,
-                end: i
-            }
-            result.push(current)
-        } else {
-            current.end = i
-        }
-    })
+                if (!current || isSunday) {
+                    current = {
+                        week: getWeekNumber(d),
+                        start: i,
+                        end: i
+                    }
+                    result.push(current)
+                } else {
+                    current.end = i
+                }
+            })
 
-    return result
-})
-        // TODO: Add a reactive clock (current time).
-        // This should update every second and be shown in the top-left cell.
+            return result
+        })
+
+        // the clock
         const currentTime = ref(new Date())
         let interval
 
@@ -93,11 +93,14 @@ const weeks = computed(() => {
     template: `
     <div class="header-bg"></div>
     <!-- LEFT HEADER -->
-    <div class="date-header">
+<div class="date-header">
+    <div class="month-label-top">
         <div class="month-label-top">◀ {{ viewMonth }} ▶</div>
-        <div class="date-label">{{ currentDateLabel }}</div>
-        <div class="clock">{{ currentTime.toLocaleTimeString() }}</div>
     </div>
+
+    <div class="date-label">{{ currentDateLabel }}</div>
+    <div class="clock">{{ currentTime.toLocaleTimeString() }}</div>
+</div>
 
     <!-- WEEK ROW -->
     <template v-for="(w, index) in weeks" :key="'week-' + index">

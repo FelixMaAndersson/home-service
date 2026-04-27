@@ -21,21 +21,17 @@ const app = {
         const selectedProfessions = ref([])
 
         const today = new Date()
-
         const viewStartDate = new Date(today)
 
-        // monday this week
         const day = viewStartDate.getDay() || 7
         viewStartDate.setDate(viewStartDate.getDate() - (day - 1))
-
-        // backs two weeks too get all the data
         viewStartDate.setDate(viewStartDate.getDate() - 14)
 
-        const viewStart = viewStartDate.toISOString().split('T')[0]
-
-        const visibleDays = 27 // to not show sundays
+        const visibleDays = 27
         const totalDays = 55
         const nameColumnWidth = 200
+
+        const viewStart = viewStartDate.toISOString().split('T')[0]
         const days = generateDays()
 
         // we fetch the data from the API, turn the response into JavaScript data, and store it in persons.
@@ -96,7 +92,7 @@ const app = {
             toggleProfession,
             days,
             scheduleStyle,
-            viewStart,
+            viewStart
         }
     },
 
