@@ -202,10 +202,10 @@ html {
 }
 
 .zoom-divider {
-    height: 0.7px;
+
+    height: 1px;
     background: #CFD3DD;
 }
-
 
 .main-navbar {
     position: fixed;
