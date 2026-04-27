@@ -182,9 +182,7 @@ html {
     right: 20px;
     pointer-events: auto;
 
-
     line-height: 31.843px;
-
     text-align: center;
     padding: 0.5rem;
 
@@ -217,8 +215,6 @@ html {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    height: 50px;
     padding: 0 35px;
     box-sizing: border-box;
 
@@ -269,4 +265,13 @@ html {
 .person-week-divider {
     z-index: 1;
     pointer-events: none;
+}
+.logo-placeholder {
+    margin: 0;
+    padding: 0;
+}
+
+.logo-placeholder img,
+.icon {
+    display: block;
 }
