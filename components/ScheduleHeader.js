@@ -26,22 +26,27 @@ export default {
             const yearStart = new Date(d.getFullYear(), 0, 1)
             return Math.ceil((((d - yearStart) / 86400000) + 1) / 7)
         }
-        const weeks = computed(() => {
-            const result = []
-            let current = null
-            props.days.forEach((d, i) => {
-                const week = getWeekNumber(d)
+const weeks = computed(() => {
+    const result = []
+    let current = null
 
-                if (!current || current.week !== week) {
-                    current = { week, start: i, end: i }
-                    result.push(current)
-                } else {
-                    current.end = i
-                }
-            })
+    props.days.forEach((d, i) => {
+        const isSunday = d.getDay() === 0
 
-            return result
-        })
+        if (!current || isSunday) {
+            current = {
+                week: getWeekNumber(d),
+                start: i,
+                end: i
+            }
+            result.push(current)
+        } else {
+            current.end = i
+        }
+    })
+
+    return result
+})
         // TODO: Add a reactive clock (current time).
         // This should update every second and be shown in the top-left cell.
         const currentTime = ref(new Date())
@@ -114,7 +119,7 @@ export default {
             :class="{
                 today: isToday(d),
                 weekend: d.getDay() === 0 || d.getDay() === 6,
-                'week-divider': d.getDay() === 1
+                'week-divider': d.getDay() === 0
             }"
             :style="{
                 gridColumn: i + 2,

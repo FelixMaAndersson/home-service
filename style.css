@@ -14,15 +14,11 @@ html {
     gap: 5px;
     min-width: max-content;
     line-height: normal;
-    position: sticky;
     margin-top: 40px;
-    z-index: 999;
     background-color: #EFF2F9;
 }
 
 .date-cell {
-    position: sticky;
-    z-index: 12;
     background: #EFF2F9;
     font-size: 12px;
     text-align: center;
