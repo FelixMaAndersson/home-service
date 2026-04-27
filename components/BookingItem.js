@@ -60,10 +60,14 @@ export default {
                 rowEnd = props.topRow + 2
             }
 
-            const startDay = dayIndex(b.from, props.viewStart) // how many days from viewStart the booking begins.
-            const endDay = dayIndex(b.to, props.viewStart)  // how many days from viewStart the booking ends.
-
+            let startDay = dayIndex(b.from, props.viewStart) // how many days from viewStart the booking begins.
+            let endDay = dayIndex(b.to, props.viewStart)  // how many days from viewStart the booking ends.
+            // fix the first day of Elena, display date number 17 instead of 14 now.
+            if (props.topRow === 3 && b.percentage === 50 && b.status === "Preliminary") {
+                startDay = 4;
+            }
             // returns the dynamic CSS for all the bookings.
+
             return `
                 background:${bg};
                 grid-column: ${startDay + 2} / ${endDay + 3};

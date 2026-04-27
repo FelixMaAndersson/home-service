@@ -90,12 +90,12 @@ export default {
     <div class="header-bg"></div>
     <!-- LEFT HEADER -->
 <div class="date-header">
-    <div class="month-label-top">
+    <div class="month-label-top" style="text-transform: capitalize; color:#50556C">
         <div class="month-label-top">◀ {{ viewMonth }} ▶</div>
     </div>
 
-    <div class="date-label">{{ currentDateLabel }}</div>
-    <div class="clock">{{ currentTime.toLocaleTimeString() }}</div>
+    <div class="date-label" style="text-transform: capitalize; color:#AFB3C1">{{ currentDateLabel }}</div>
+    <div class="clock" style= color:#AFB3C1;>{{ currentTime.toLocaleTimeString() }}</div>
 </div>
 
     <!-- WEEK ROW -->
