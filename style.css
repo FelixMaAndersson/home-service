@@ -161,7 +161,19 @@ html {
     left: 50%;
     transform: translateX(-50%);
     pointer-events: auto;
+    display: flex;
+    padding: 13px 40px 12px 40px;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+
+    border-radius: 28px;
     background-color: #EFF2F9;
+    box-shadow: 0 -1px 20px 2px rgba(0, 0, 0, 0.25);
+}
+
+.filter-controls img {
+    cursor: pointer;
 }
 
 .zoom-control {
@@ -190,8 +202,6 @@ html {
     background-color: #D0D6E5;
     border-bottom: 1px solid #dee2e6;
 }
-
-
 
 .nav-menu {
     display: flex;
@@ -231,4 +241,9 @@ html {
 
 .person-row-bg.even {
     background: #f3f3f3;
+}
+
+.person-week-divider {
+    z-index: 1;
+    pointer-events: none;
 }

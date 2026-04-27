@@ -8,7 +8,8 @@ export default {
     props: {
         person: Object,
         topRow: Number,
-        viewStart: String
+        viewStart: String,
+        days: Array
     },
 
     setup() {
@@ -48,6 +49,17 @@ export default {
     :class="{ even: topRow % 4 === 3 }"
     :style="rowBackgroundStyle(topRow)"
 ></div>
+
+        <template v-for="(d, i) in days" :key="'person-divider-' + i">
+            <div
+                v-if="d.getDay() === 0"
+                class="week-divider person-week-divider"
+                :style="{
+                    gridColumn: i + 2,
+                    gridRow: topRow + ' / ' + (topRow + 2)
+                }"
+            ></div>
+        </template>
         
         <div
             class="name"

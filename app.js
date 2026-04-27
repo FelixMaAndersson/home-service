@@ -92,6 +92,7 @@ const app = {
                     :person="p"
                     :top-row="index * 2 + 3"
                     :view-start="viewStart"
+                    :days="days"
                 ></person-row>
         </div>
         <schedule-overlay></schedule-overlay>
