@@ -17,7 +17,6 @@ export default {
         }
 
         // A function that groups "days" into weeks.
-
         function getWeekNumber(date) {
             const d = new Date(date)
             d.setHours(0, 0, 0, 0)
